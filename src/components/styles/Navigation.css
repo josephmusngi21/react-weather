@@ -1,0 +1,19 @@
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.menu {
+    display: flex;
+}
+
+h1 {
+    color: #000000;
+    margin: 0;
+}
+
+.themeMenu {
+    display: flex;
+}
+

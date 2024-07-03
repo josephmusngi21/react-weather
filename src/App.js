@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'; 
-import { createRoot } from 'react-dom/client';
-import Card from '/Card';
+import React from 'react'; 
+import Card from './components/Card';
+import Navigation from './components/Navigation';
 
 function App() {
 
     return(
     <>
+        <Navigation />
         <Card />    
     </>
     )
 }
-
 export default App;
