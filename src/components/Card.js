@@ -20,7 +20,8 @@ function Card() {
     const date =new Date();
     const year = date.getFullYear();
     const month = monthString[date.getMonth()];
-    const day = date.getDate();    
+    const day = date.getDate();  
+
 
     return (
         <>
@@ -34,3 +35,4 @@ function Card() {
 }
 
 export default Card;
+
