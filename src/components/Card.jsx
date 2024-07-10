@@ -1,6 +1,6 @@
 import React from 'react';
 import Info from './Info';
-import styles from './styles/Card.module.css';
+import styles from './styles/Basic.module.css';
 
 function Card() {
     const monthString = {
@@ -23,10 +23,9 @@ function Card() {
     const month = monthString[date.getMonth()];
     const day = date.getDate();  
 
-
     return (
         <>
-            <div className='info'>
+            <div className={styles.centerColumn}>
                 <Info />
                 <h4 id='Date'>{month} {day} {year}</h4>            
             </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as images from "./img/img";
+import styles from "./styles/Basic.module.css";
 
 export default function Info() {
   const [city, setCity] = useState("");
@@ -7,7 +8,8 @@ export default function Info() {
   const [weatherData, setWeatherData] = useState(null);
 
   const api_key = "9aba1954eb6b6b23bc6bc6dcfeb1891b";
-  const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
+  const apiURL =
+    "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
 
   const weatherComponents = {
     clear: images.clear,
@@ -68,32 +70,47 @@ export default function Info() {
   ];
 
   return (
-    <>
+    <div className={styles.centerColumn}>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Enter City" />
         <button type="submit">Submit</button>
       </form>
-      <div id="extra">
-        <div id="changeOfRain">
+      <div id="extra" className={styles.centerColumn}>
+        <div id="changeOfRain" class={styles.columnWide}>
           {!weatherData ? null : (
             <>
-              {weathers.includes(weatherData.weather[0].main) ? <></> : <h1> </h1>}
-              <h1>current weather: {weatherData.weather[0].main}</h1>
+              {weathers.includes(weatherData.weather[0].main) ? (
+                <></>
+              ) : (
+                <h1> </h1>
+              )}
+              <div id="imgContainer" classNames={styles.center}>
               <img
-                src={weatherComponents[weatherData.weather[0].main.toLowerCase()]}
+                src={
+                  weatherComponents[weatherData.weather[0].main.toLowerCase()]
+                }
                 alt={`${weatherData.weather[0].main}Img`}
-                style={{ width: "70px", height: "70px" }}
+                style={{ height: "80%"}}
               />
-              <h1>temp: {weatherData.main.temp}</h1>
-              <h1>min temp: {weatherData.main.temp_min}</h1>
-              <h1>max temp: {weatherData.main.temp_max}</h1>
-              <h1>humidity: {weatherData.main.humidity}</h1>
-              <h1>wind: {weatherData.wind.speed}</h1>
+              </div>
+
+
+              <div id="extra">
+                <p className={styles.pStyle}>weather: {weatherData.weather[0].main}</p>
+                <p className={styles.pStyle}>humidity: {weatherData.main.humidity}</p>
+                <p className={styles.pStyle}>wind: {weatherData.wind.speed}</p>
+              </div>
+
+              <div id="temp">
+                <p className={styles.pStyle}>temp: {weatherData.main.temp}</p>
+                <p className={styles.pStyle}>min temp: {weatherData.main.temp_min}</p>
+                <p className={styles.pStyle}>max temp: {weatherData.main.temp_max}</p>
+              </div>
             </>
           )}
           {error && <p className="error">Error: City not found</p>}
         </div>
       </div>
-    </>
+    </div>
   );
 }

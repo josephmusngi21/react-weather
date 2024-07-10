@@ -13,6 +13,7 @@ export default function Navigation() {
 
     const handleSubmit = (e) => {
         setLocation(e.target.value);
+        e.preventDefault();
     } 
 
     return (
@@ -22,7 +23,7 @@ export default function Navigation() {
             <h3>Menu</h3>
             </div>
 
-            <h1>{location}</h1>
+            <h1>Weather App</h1>
 
             <div className='themeMenu'>
                 <h3>Theme</h3>
