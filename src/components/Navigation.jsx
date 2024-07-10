@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import MenuButton from './Menu';
-import './styles/Navigation.css';
+import './styles/Navigation.module.css';
 
 
 export default function Navigation() {

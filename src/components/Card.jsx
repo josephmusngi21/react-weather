@@ -1,5 +1,6 @@
 import React from 'react';
 import Info from './Info';
+import styles from './styles/Card.module.css';
 
 function Card() {
     const monthString = {
