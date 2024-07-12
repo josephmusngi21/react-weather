@@ -3,7 +3,7 @@ import * as images from "./img/img";
 import styles from "./styles/Basic.module.css";
 
 export default function Info() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState('');
   const [error, setError] = useState(false);
   const [weatherData, setWeatherData] = useState(null);
 
@@ -76,7 +76,7 @@ export default function Info() {
         <button type="submit">Submit</button>
       </form>
       <div id="extra" className={styles.centerColumn}>
-        <div id="changeOfRain" class={styles.columnWide}>
+        <div id="changeOfRain" className={styles.columnWide}>
           {!weatherData ? null : (
             <>
               {weathers.includes(weatherData.weather[0].main) ? (
@@ -84,7 +84,7 @@ export default function Info() {
               ) : (
                 <h1> </h1>
               )}
-              <div id="imgContainer" classNames={styles.center}>
+              <div id="imgContainer" className={styles.center}>
               <img
                 src={
                   weatherComponents[weatherData.weather[0].main.toLowerCase()]
